@@ -1,0 +1,155 @@
+/* Reset y configuración base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Contenedor principal del datepicker */
+.datepicker {
+    background-color: white;
+    border: 2px solid #333;
+    border-radius: 8px;
+    width: 320px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Encabezado con input de fecha e ícono */
+.datepicker-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    border-bottom: 2px solid #333;
+}
+
+/* Campo de entrada de fecha */
+.date-input input {
+    border: 2px solid #333;
+    padding: 6px 8px;
+    font-size: 14px;
+    width: 100px;
+    border-radius: 4px;
+}
+
+/* Ícono del calendario (dibujado con pseudoelementos) */
+.calendar-icon {
+    width: 24px;
+    height: 24px;
+    background-color: #333;
+    border-radius: 4px;
+    position: relative;
+    cursor: pointer;
+}
+
+/* Barra superior del ícono */
+.calendar-icon::before {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 16px;
+    height: 2px;
+    background-color: white;
+}
+
+/* Cuerpo del ícono del calendario */
+.calendar-icon::after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 4px;
+    right: 4px;
+    bottom: 4px;
+    background-color: white;
+    border-radius: 2px;
+}
+
+/* Cuerpo del calendario */
+.calendar-body {
+    padding: 16px;
+}
+
+/* Navegación de meses con flechas */
+.calendar-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+/* Flechas de navegación (creadas con borders) */
+.nav-arrow {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    cursor: pointer;
+}
+
+/* Flecha izquierda */
+.nav-arrow.left {
+    border-width: 8px 12px 8px 0;
+    border-color: transparent #333 transparent transparent;
+}
+
+/* Flecha derecha */
+.nav-arrow.right {
+    border-width: 8px 0 8px 12px;
+    border-color: transparent transparent transparent #333;
+}
+
+/* Texto del mes actual */
+.current-month {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Tabla del calendario */
+.calendar-grid {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 8px;
+}
+
+/* Encabezados de días de la semana */
+.calendar-grid th {
+    text-align: center;
+    padding: 8px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #666;
+}
+
+/* Celdas de días del mes */
+.calendar-grid td {
+    text-align: center;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+/* Efecto hover en los días */
+.calendar-grid td:hover {
+    background-color: #f0f0f0;
+}
+
+/* Celdas vacías sin borde ni interacción */
+.calendar-grid td:empty {
+    border: none;
+    cursor: default;
+    background-color: transparent;
+}

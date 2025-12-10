@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datepicker UI</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="datepicker">
+        <div class="datepicker-header">
+            <div class="date-input">
+                <input type="text" value="dd / mm / yyyy" readonly>
+            </div>
+            <div class="calendar-icon"></div>
+        </div>
+        
+        <div class="calendar-body">
+            <div class="calendar-nav">
+                <div class="nav-arrow left"></div>
+                <div class="current-month">December 2022</div>
+                <div class="nav-arrow right"></div>
+            </div>
+            
+            <!-- 
+                Tabla del calendario. Se usa <table> en lugar de divs porque así se evitan divs repetitivos
+            -->
+            <table class="calendar-grid">
+                <!-- Encabezado de la tabla con los días de la semana -->
+                <thead>
+                    <tr>
+                        <!-- <th> se usa para encabezados de columna -->
+                        <th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th>
+                    </tr>
+                </thead>
+                <!-- Cuerpo de la tabla con las semanas del mes -->
+                <tbody>
+                    <!-- Primera semana (con celdas vacías al inicio porque diciembre 2022 empieza en jueves) -->
+                    <tr>
+                        <!-- <td> vacíos para días que no pertenecen al mes -->
+                        <td></td><td></td><td></td><td></td><td>1</td><td>2</td><td>3</td>
+                    </tr>
+                    <!-- Segunda semana -->
+                    <tr>
+                        <td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td>
+                    </tr>
+                    <!-- Tercera semana -->
+                    <tr>
+                        <td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td>
+                    </tr>
+                    <!-- Cuarta semana -->
+                    <tr>
+                        <td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td>
+                    </tr>
+                    <!-- Quinta semana -->
+                    <tr>
+                        <td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
